@@ -1,0 +1,173 @@
+.contactSection{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-bottom: 0; */
+}
+
+.contactHeading{
+    width: fit-content;
+    height: 100px;
+}
+
+.contactHeading h2{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.contactHeadingUnderline{
+    width: 80%;
+    height: 8px;
+    background-color: var(--primary-color);
+    border: none;
+    margin: 20px auto;
+}
+
+.submitForm{
+    margin: 20px 0 20px 0;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name, .email, .message{
+    margin-bottom: 30px;
+}
+
+.name p, .email p, .message p{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.contactAreaInput, .contactAreaText{
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: white;
+    color: #181a1b;
+    font-weight: 700;
+    cursor: text;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.contactAreaInput{
+    width: 500px;
+    height: 50px;
+}
+
+.contactAreaText{
+    width: 500px;
+    height: 100px;
+    resize: none;
+}
+
+.subButton{
+    width: 200px;
+    height: 50px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.subButton:hover{
+    opacity: 70%;
+}
+
+.socials{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 0 0;
+}
+
+.github, .linkedin{
+    margin: 0 30px 0 30px;
+    font-size: 22px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-github, .fa-linkedin{
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.github:hover, .linkedin:hover{
+    font-size: 25px;
+}
+
+@media (max-width: 767px){
+    .submitForm{
+        width: 768px;
+    }
+
+    .name p, .email p, .message p{
+        font-size: 16px;
+    }
+
+    .contactAreaInput{
+        width: 400px;
+    }
+
+    .contactAreaText{
+        width: 400px;
+    }
+}
+
+@media (max-width: 479px){ 
+    .contactHeading h2{
+        font-size: 25px;
+    }
+    
+    .contactHeadingUnderline{
+        height: 6px;
+        margin: 10px auto;
+    }
+
+    .submitForm{
+        width: 350px;
+    }
+
+    .name p, .email p, .message p{
+        font-size: 16px;
+    }
+
+    .contactAreaInput, .contactAreaText{
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .contactAreaInput{
+        width: 325px;
+    }
+
+    .contactAreaText{
+        width: 325px;
+    }
+
+    .subButton{
+        width: 150px;
+        height: 45px;
+        font-size: 0.8em;
+    }
+
+    .socials{
+        margin: 5px 0 0 0;
+    }
+    
+    .github, .linkedin{
+        margin: 0 30px 0 30px;
+        font-size: 18px;
+    }
+}
