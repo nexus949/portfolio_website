@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* margin-bottom: 0; */
 }
 
 .contactHeading{
@@ -108,8 +107,23 @@
 }
 
 @media (max-width: 767px){
+    .contactSection{
+        margin-bottom: 0;
+    }
+
+    .contactHeading{
+        width: fit-content;
+        height: 80px;
+    }
+    
+    .contactHeading h2{
+        font-size: 35px;
+        font-weight: 700;
+    }
+
     .submitForm{
         width: 768px;
+        margin: 15px 0 15px 0;
     }
 
     .name p, .email p, .message p{
@@ -122,6 +136,10 @@
 
     .contactAreaText{
         width: 400px;
+    }
+
+    .socials{
+        margin: 20px 0 0 0;
     }
 }
 

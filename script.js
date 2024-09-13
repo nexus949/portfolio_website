@@ -13,10 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         sideMenu.classList.add('sideMenu');
         sideNavBar.append(sideMenu);
 
-        // Move all nav elements into the side menu
         navLinks.forEach(link => {
+
             // Remove right margin from nav links when in smaller screens
             link.style.marginRight = 0;
+            
             link.classList.add('navLinkForSmallerScreens');
             sideMenu.appendChild(link);
         });
@@ -35,7 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (sideMenu) {
             // Remove the active class for the smooth closing transition
             sideMenu.classList.remove('active');
+            
+            //return the navLinks to the origin navLink container (navOptions)
+            let navOptions = document.querySelector('.navOptions');
+            navLinks.forEach(link =>{
+                link.classList.remove('navLinkForSmallerScreens');
 
+                //reapply the margin to the right !
+                link.style.marginRight = '40px';
+                navOptions.appendChild(link);
+            });
+
+            //remove the sideMenu
             setTimeout(() =>{
                 sideMenu.remove();
             }, 300)
