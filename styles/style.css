@@ -56,6 +56,7 @@ header {
     border-radius: 10px;
     box-shadow: rgba(12, 10, 10, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
+    user-select: none;
 }
 
 .navEl {
@@ -137,8 +138,8 @@ a{
     }
 
     .profilePicture{
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
     }
 
     .navOptions{ display: none; }
@@ -147,7 +148,7 @@ a{
         display: block;
         user-select: none;
         cursor: pointer;
-        font-size: 18px;
+        font-size: 20px;
         position: relative;
     }
 
@@ -188,22 +189,7 @@ a{
     }
 
     .profilePicture{
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
     }
-
-    /* .sideMenu{
-        width: 130px;
-        height: 80px;
-    }
-
-    .sideMenu > *{
-        font-size: 15px;
-    }
-
-    .active{
-        transform: translateY(0);
-        opacity: 1;
-    } */
-
 }

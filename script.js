@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Remove right margin from nav links when in smaller screens
             link.style.marginRight = 0;
-            
+
             link.classList.add('navLinkForSmallerScreens');
             sideMenu.appendChild(link);
         });
@@ -36,22 +36,44 @@ document.addEventListener('DOMContentLoaded', () => {
         if (sideMenu) {
             // Remove the active class for the smooth closing transition
             sideMenu.classList.remove('active');
-            
-            //return the navLinks to the origin navLink container (navOptions)
-            let navOptions = document.querySelector('.navOptions');
-            navLinks.forEach(link =>{
-                link.classList.remove('navLinkForSmallerScreens');
 
-                //reapply the margin to the right !
-                link.style.marginRight = '40px';
-                navOptions.appendChild(link);
-            });
+            //return the navLinks to the origin navLink container (navOptions)
+            setTimeout(() => {
+                let navOptions = document.querySelector('.navOptions');
+                navLinks.forEach(link => {
+                    link.classList.remove('navLinkForSmallerScreens');
+
+                    //reapply the margin to the right !
+                    link.style.marginRight = '40px';
+                    navOptions.appendChild(link);
+                });
+            }, 300);
 
             //remove the sideMenu
-            setTimeout(() =>{
+            setTimeout(() => {
                 sideMenu.remove();
             }, 300)
         }
     });
 
+
+    //darkmode code
+
+    let darkModeButton = document.querySelector('.profilePicture');
+    let currentMode = 'light';
+
+    darkModeButton.addEventListener('click', () => {
+        changeMode();
+    })
+
+    function changeMode() {
+        if (currentMode === 'light') {
+            currentMode = 'dark';
+            darkModeButton.src = './tanjiroDark.jpg';
+        }
+        else {
+            currentMode = 'light';
+            darkModeButton.src = './tanjiroLight.jpg';
+        }
+    }
 });
