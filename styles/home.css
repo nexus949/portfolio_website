@@ -17,7 +17,6 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 50px;
-    border: 2px solid black;
 }
 
 .intro h1{
@@ -114,12 +113,11 @@
 
 @media (max-width: 767px){
     .intro h1{
-        font-size: 40px;
+        font-size: 45px;
     }
 
     .about{
-        font-size: 18px;
-        width: 400px;
+        width: 350px;
     }
     
     .heroSection{
@@ -170,12 +168,12 @@
 
 @media (max-width: 479px){
     .intro h1{
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .about{
-        font-size: 16px;
-        width: 350px;
+        font-size: 18px;
+        width: 325px;
     }
 
     .projectsButton{
