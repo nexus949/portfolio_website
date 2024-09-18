@@ -53,7 +53,7 @@
 
 @media (max-width: 767px){
     .techStackHeading{
-        margin-bottom: 35px;
+        margin-bottom: 15px;
     }
 
     .techStackHeading h2{
@@ -61,12 +61,33 @@
     }
 
     .techStack{
-        width: 80px;
-        height: 80px;
-        padding: 10px;
+        width: 70px;
+        height: 70px;
+        padding: 8px;
     }
 
     .techStack i{
-        font-size: 60px;
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 479px){
+    .techStackHeading{
+        margin-bottom: 5px;
+    }
+
+    .techStackHeading h2{
+        font-size: 25px;
+    }
+
+    .techStack{
+        width: 60px;
+        height: 60px;
+        padding: 12px;
+        margin: 15px;
+    }
+
+    .techStack i{
+        font-size: 35px;
     }
 }

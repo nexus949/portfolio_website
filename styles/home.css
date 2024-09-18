@@ -112,6 +112,10 @@
 }
 
 @media (max-width: 767px){
+    .homeSection{
+        margin-bottom: 15px;
+    }
+
     .intro h1{
         font-size: 38px;
     }
