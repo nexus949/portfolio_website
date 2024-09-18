@@ -70,10 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentMode === 'light') {
             currentMode = 'dark';
             darkModeButton.src = './tanjiroDark.jpg';
+            
+            let body = document.querySelector('body')
+            body.style.backgroundColor = '#181a1b';
+            // document.body.classList.add('dark-theme');
         }
         else {
             currentMode = 'light';
             darkModeButton.src = './tanjiroLight.jpg';
+
+            document.querySelector('body').style.backgroundColor = '#f7f7f7';
         }
     }
 });

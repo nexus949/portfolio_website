@@ -113,7 +113,7 @@
 
 @media (max-width: 767px){
     .intro h1{
-        font-size: 40px;
+        font-size: 38px;
     }
 
     .about{
@@ -168,7 +168,7 @@
 
 @media (max-width: 479px){
     .intro h1{
-        font-size: 35px;
+        font-size: 32px;
     }
 
     .about{

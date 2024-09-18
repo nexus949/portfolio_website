@@ -151,8 +151,6 @@
     }
 
     .projectHeading {
-        width: fit-content;
-        height: 100px;
         margin-top: 30px;
     }
 
@@ -167,7 +165,7 @@
     }
 
     .title i {
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .title h2 {

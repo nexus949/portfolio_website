@@ -113,11 +113,10 @@
 
     .contactHeading{
         width: fit-content;
-        height: 80px;
     }
     
     .contactHeading h2{
-        font-size: 35px;
+        font-size: 30px;
         font-weight: 700;
     }
 
@@ -146,6 +145,7 @@
 @media (max-width: 479px){ 
     .contactHeading h2{
         font-size: 25px;
+        margin-top: 10px;
     }
     
     .contactHeadingUnderline{
