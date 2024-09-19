@@ -9,6 +9,7 @@
 .contactHeading{
     width: fit-content;
     height: 100px;
+    padding-top: 20px;
 }
 
 .contactHeading h2{
@@ -118,6 +119,7 @@
 
     .contactHeading{
         width: fit-content;
+        padding-top: 0;
     }
     
     .contactHeading h2{
