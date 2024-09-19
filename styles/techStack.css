@@ -54,6 +54,10 @@
 
 
 @media (max-width: 767px){
+    .techStackSection{
+        padding-top: 20px;
+    }
+    
     .techStackHeading{
         margin-bottom: 15px;
     }
