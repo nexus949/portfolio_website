@@ -65,11 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     darkModeButton.addEventListener('click', () =>{
         if(currentMode === 'light'){
-            darkModeButton.src = './tanjiroDark.jpg';
+            darkModeButton.src = './gokuDark.jpg';
             currentMode = 'dark';
         }
         else{
-            darkModeButton.src = './tanjiroLight.jpg';
+            darkModeButton.src = './gokuLight.jpg';
             currentMode = 'light';
         }
 
