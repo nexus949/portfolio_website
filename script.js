@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let closedMenu = document.querySelector('.fa-bars');
     let openMenu = document.querySelector('.fa-xmark');
     let sideNavBar = document.querySelector('.navBarforSmallerScreens');
-    let navLinks = document.querySelectorAll('.navEl'); // Keep the nav links reference outside the event
+    let navLinks = document.querySelectorAll('.navEl');
+    let projectButton = document.querySelector('.projectsButton');
+    let techStack = document.querySelectorAll('.techStack');
 
     closedMenu.addEventListener('click', () => {
         closedMenu.style.display = 'none';
@@ -58,28 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //darkmode code
-
     let darkModeButton = document.querySelector('.profilePicture');
     let currentMode = 'light';
 
-    darkModeButton.addEventListener('click', () => {
-        changeMode();
-    })
-
-    function changeMode() {
-        if (currentMode === 'light') {
-            currentMode = 'dark';
+    darkModeButton.addEventListener('click', () =>{
+        if(currentMode === 'light'){
             darkModeButton.src = './tanjiroDark.jpg';
-            
-            let body = document.querySelector('body')
-            body.style.backgroundColor = '#181a1b';
-            // document.body.classList.add('dark-theme');
+            currentMode = 'dark';
         }
-        else {
-            currentMode = 'light';
+        else{
             darkModeButton.src = './tanjiroLight.jpg';
-
-            document.querySelector('body').style.backgroundColor = '#f7f7f7';
+            currentMode = 'light';
         }
-    }
+
+        document.body.classList.toggle('dark-mode');
+    });
 });

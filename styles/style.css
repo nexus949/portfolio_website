@@ -5,7 +5,6 @@
     font-family: "Overpass", sans-serif;
     font-weight: 500;
     cursor: default;
-    color: #181a1b;
 }
 
 html {
@@ -14,19 +13,50 @@ html {
 }
 
 :root {
-    --primary-color: #224455;
+    /*Base color will not change*/
+    --base-accent-color: #224455;
+
+    --primary-accent-color: #224455;
+    --primary-font-color: #181a1b;
+    --primary-background-color: #f7f7f7;
+    --linear-gradient: linear-gradient(135deg, white, #e9f5f7);
+
+    /*Background for the tech Stack*/
+    --tech-tiles-background: #f7f7f7;
+
+    /*Background for the contact form input fields*/
+    --input-field-background-color: white;
+
+    /*project button and tech stack hover shadow*/
+    --project-button-hover-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    --tech-stack-hover-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.dark-theme{
-    color: #181a1b;
+.dark-mode {
+    --primary-accent-color: #9FC5D9;
+    --primary-font-color: #f7f7f7;
+    --primary-background-color: #181a1b;
+    --linear-gradient: linear-gradient(135deg, rgb(24, 26, 27), rgb(18, 46, 51));
+    ;
+
+    /*Background for the tech Stack*/
+    --tech-tiles-background: #121314;
+
+    /*Background for the contact form input fields*/
+    --input-field-background-color: #121314;
+
+    /*project button and tech stack hover shadow*/
+    --project-button-hover-shadow: rgba(0, 0, 0, 0.5) 0px 15px 30px 5px;
+    --tech-stack-hover-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 body {
     max-width: 100vw;
     min-height: 100dvh;
     margin: 0;
-    background-color: #f7f7f7;
+    background-color: var(--primary-background-color);
     overflow-x: hidden;
+    transition: all 0.3s ease;
 }
 
 .container {
@@ -35,6 +65,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--primary-font-color);
 }
 
 header {
@@ -61,6 +92,7 @@ header {
     box-shadow: rgba(12, 10, 10, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
     user-select: none;
+    transition: all 0.3s ease;
 }
 
 .navEl {
@@ -74,81 +106,87 @@ header {
 
 .navEl:hover {
     transform: translateY(-5px);
-    color: var(--primary-color);
+    color: var(--primary-accent-color);
     font-size: 22px;
     font-weight: 700;
 }
 
-.navBarforSmallerScreens{ display: none; }
+.navBarforSmallerScreens {
+    display: none;
+}
 
 main {
     width: 1200px;
     height: 100%;
 }
 
-section{
+section {
     margin-bottom: 100px;
+    color: var(--primary-font-color);
 }
 
-footer{
+footer {
     margin-bottom: 25px;
     font-size: 12px;
     font-weight: 700;
 }
 
-a{
+a {
     text-decoration: none;
+    color: var(--primary-font-color);
 }
 
-.fa-brands, .fa-solid{
+.fa-brands,
+.fa-solid {
     cursor: pointer;
 }
 
-@media (max-width: 1199px){
-    header{
+@media (max-width: 1199px) {
+    header {
         width: 1000px;
     }
 
-    main{
+    main {
         width: 1000px;
     }
 }
 
-@media (max-width: 995px){
-    header{
+@media (max-width: 995px) {
+    header {
         width: 768px;
     }
 
-    main{
+    main {
         width: 768px;
     }
 
 }
 
-@media (max-width: 767px){
-    header{
+@media (max-width: 767px) {
+    header {
         width: 480px;
-        padding: 0 15px 0 15px;
-        padding-top: 0px; 
+        padding: 0;
     }
 
-    main{
+    main {
         width: 480px;
     }
 
-    section{
+    section {
         padding: 0 20px 0 20px;
-        margin-bottom: 40px; 
+        margin-bottom: 40px;
     }
 
-    .profilePicture{
+    .profilePicture {
         width: 45px;
         height: 45px;
     }
 
-    .navOptions{ display: none; }
+    .navOptions {
+        display: none;
+    }
 
-    .navBarforSmallerScreens{ 
+    .navBarforSmallerScreens {
         display: block;
         user-select: none;
         cursor: pointer;
@@ -156,9 +194,11 @@ a{
         position: relative;
     }
 
-    .fa-xmark{ display: none; }
+    .fa-xmark {
+        display: none;
+    }
 
-    .sideMenu{
+    .sideMenu {
         width: 200px;
         height: auto;
         display: flex;
@@ -173,26 +213,26 @@ a{
         transition: all 0.2s ease;
     }
 
-    .active{
+    .active {
         transform: translateY(0);
         opacity: 1;
     }
 
-    .navLinkForSmallerScreens{
+    .navLinkForSmallerScreens {
         margin: 5px 0 10px 0;
     }
 }
 
-@media (max-width: 479px){
-    header{
+@media (max-width: 479px) {
+    header {
         width: 350px;
     }
 
-    main{
+    main {
         width: 350px;
     }
 
-    .profilePicture{
+    .profilePicture {
         width: 35px;
         height: 35px;
     }

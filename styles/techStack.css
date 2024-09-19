@@ -30,24 +30,26 @@
 .techStack{
     width: 100px;
     height: 100px;
-    padding: 12px;
+    padding: 15px;
     border: none;
     border-radius: 20px;
     margin: 20px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: var(--tech-tiles-background);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .techStack i{
-    font-size: 75px;
+    font-size: 70px;
     cursor: pointer;
+    filter: brightness(1.0) contrast(1.1) saturate(1.15);
 }
 
 .techStack:hover{
+    box-shadow: var(--tech-stack-hover-shadow);
     transform: translateY(-5px);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 

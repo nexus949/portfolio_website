@@ -21,7 +21,7 @@
 .projectHeadingUnderline {
     width: 80%;
     height: 8px;
-    background-color: var(--primary-color);
+    background-color: var(--primary-accent-color);
     border: none;
     margin: 25px auto;
 }
@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background: linear-gradient(135deg, white, #e9f5f7);
+    background: var(--linear-gradient);
     transition: all 0.3s ease;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .title i, .title h2, .tech, .description {
-    color: var(--primary-color);
+    color: var(--primary-accent-color);
 }
 
 .title i {
@@ -99,7 +99,7 @@
 .demo, .sourceCode {
     width: 150px;
     height: 45px;
-    background-color: var(--primary-color);
+    background-color: var(--base-accent-color);
     color: white;
     border: none;
     border-radius: 5px;
