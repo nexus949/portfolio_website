@@ -96,6 +96,16 @@
     height: 95px;
 }
 
+.under-construction-label{
+    width: fit-content;
+    background-color: #DCDCDC;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color:  var(--base-accent-color);
+    font-weight: 600;
+}
+
 .demo, .sourceCode {
     width: 150px;
     height: 45px;
