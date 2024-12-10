@@ -21,11 +21,19 @@ html {
     --primary-background-color: #f7f7f7;
     --linear-gradient: linear-gradient(135deg, white, #e9f5f7);
 
+    /*Content background on hover*/
+    --content-hover-background-color: #d8d8d8;
+
+    /*Side Menu Background*/
+    --side-menu-background-color: #e0e0e0;
+
+    --header-component-border: rgb(230, 230, 230);
+
     /*Background for the tech Stack*/
-    --tech-tiles-background: #f7f7f7;
+    --tiles-background: #f7f7f7;
 
     /*Background for the contact form input fields*/
-    --input-field-background-color: white;
+    --secondary-font-color: white;
 
     /*project button and tech stack hover shadow*/
     --project-button-hover-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -35,19 +43,26 @@ html {
 .dark-mode {
     --primary-accent-color: #9FC5D9;
     --primary-font-color: #f7f7f7;
-    --primary-background-color: #181a1b;
+    --primary-background-color: #0F0F0F;
     --linear-gradient: linear-gradient(135deg, rgb(24, 26, 27), rgb(18, 46, 51));
-    ;
+
+    /*Content background on hover*/
+    --content-hover-background-color: #333333;
+
+    /*Side Menu Background*/
+    --side-menu-background-color: #1a1a1a;
+
+    --header-component-border: rgb(33, 33, 33);
 
     /*Background for the tech Stack*/
-    --tech-tiles-background: #121314;
+    --tiles-background: #181a1b;
 
     /*Background for the contact form input fields*/
-    --input-field-background-color: #121314;
+    --secondary-font-color: #121314;
 
     /*project button and tech stack hover shadow*/
     --project-button-hover-shadow: rgba(0, 0, 0, 0.5) 0px 15px 30px 5px;
-    --tech-stack-hover-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    --tech-stack-hover-shadow: rgba(0, 0, 0, 0.5) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 body {
@@ -72,8 +87,10 @@ header {
     width: 1200px;
     height: 100px;
     padding-top: 20px;
-    z-index: 999;
+    z-index: 10000;
     margin: 0 auto;
+    position: sticky;
+    top: 0;
 }
 
 .navBar {
@@ -83,32 +100,79 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    padding-top: 20px;
+    position: relative;
+}
+
+.navOptions, .profilePicture, .switchButton{ border: 2px solid var(--header-component-border); }
+
+.navOptions{
+    height: 60px;
+    background-color: var(--tiles-background);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 200px;
 }
 
 .profilePicture {
     width: 60px;
     height: 60px;
-    border-radius: 10px;
-    box-shadow: rgba(12, 10, 10, 0.2) 0px 2px 8px 0px;
+    border-radius: 50%;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s ease;
 }
 
+.profilePicture:hover{
+    scale: 1.15;
+}
+
 .navEl {
     display: inline-block;
-    margin-right: 40px;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 100px;
     user-select: none;
     transition: all 0.3s ease;
 }
 
 .navEl:hover {
-    transform: translateY(-5px);
-    color: var(--primary-accent-color);
-    font-size: 22px;
-    font-weight: 700;
+    background-color: var(--content-hover-background-color);
+}
+
+.RightSideElements{ 
+    display: flex; 
+    align-items: center;
+}
+
+.switchButton{
+    height: 60px;
+    width: 60px;
+    background-color: var(--tiles-background);
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fa-lightbulb{ 
+    font-size: 24px;
+    background-color: transparent;
+}
+
+.on-lightbulb{ display: none; }
+
+.modeButton > *{
+    transition: all 0.2s ease;
+}
+
+.modeButton > *:hover{
+    background-color: var(--content-hover-background-color);
 }
 
 .navBarforSmallerScreens {
@@ -137,8 +201,18 @@ a {
 }
 
 .fa-brands,
-.fa-solid {
+.fa-solid, .fa-regular {
     cursor: pointer;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height: 100dvh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 1199px) {
@@ -186,31 +260,50 @@ a {
         display: none;
     }
 
+    .switchButton{
+        height: 45px;
+        width: 45px;
+    }
+    
+    .fa-lightbulb{ 
+        font-size: 18px;
+    }
+
     .navBarforSmallerScreens {
+        width: 45px;
+        height: 45px;
         display: block;
         user-select: none;
         cursor: pointer;
-        font-size: 20px;
+        padding: 8px;
+        font-size: 26px;
         position: relative;
+        border-radius: 50%;
     }
 
     .fa-xmark {
         display: none;
+        z-index: 50000;
     }
 
     .sideMenu {
-        width: 200px;
+        width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        background-color: var(--side-menu-background-color);
         position: absolute;
-        right: 0;
+        border-radius: 15px;
+        top: 90px;
         padding: 10px 10px 10px 0;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         transform: translateY(-50%);
         opacity: 0;
         transition: all 0.2s ease;
+    }
+
+    .navEl:hover{
+        background-color: var(--primary-background-color);
     }
 
     .active {

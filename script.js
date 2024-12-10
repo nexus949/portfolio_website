@@ -1,28 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    let closedMenu = document.querySelector('.fa-bars');
+    let closedMenu = document.querySelector('.fa-bars-staggered');
     let openMenu = document.querySelector('.fa-xmark');
-    let sideNavBar = document.querySelector('.navBarforSmallerScreens');
+    let navBar = document.querySelector('.navBar');
     let navLinks = document.querySelectorAll('.navEl');
-    let projectButton = document.querySelector('.projectsButton');
-    let techStack = document.querySelectorAll('.techStack');
+    let sideMenu;
+    let isSideMenuOpen = false;
 
-    closedMenu.addEventListener('click', () => {
-        closedMenu.style.display = 'none';
-        openMenu.style.display = 'inline-block';
-
+    function createSideMenu(){
         let sideMenu = document.createElement('div');
         sideMenu.classList.add('sideMenu');
-        sideNavBar.append(sideMenu);
+        navBar.append(sideMenu);
+        return sideMenu;
+    }
 
-        navLinks.forEach(link => {
-
+    function addSideMenu(){
+        navLinks.forEach(link =>{
             // Remove right margin from nav links when in smaller screens
             link.style.marginRight = 0;
 
             link.classList.add('navLinkForSmallerScreens');
             sideMenu.appendChild(link);
-        });
+            isSideMenuOpen = true;
+        })
+    }
+
+    function removeSideMenu(){
+        // Remove the active class for the smooth closing transition
+        sideMenu.classList.remove('active');
+
+        //return the navLinks to the origin navLink container (navOptions)
+        setTimeout(() => {
+            let navOptions = document.querySelector('.navOptions');
+            navLinks.forEach(link => {
+                link.classList.remove('navLinkForSmallerScreens');
+                navOptions.appendChild(link);
+            });
+
+            sideMenu.remove();
+        }, 300);
+
+        isSideMenuOpen = false;
+    }
+
+    closedMenu.addEventListener('click', () => {
+        closedMenu.style.display = 'none';
+        openMenu.style.display = 'inline-block';
+
+        sideMenu = createSideMenu();
+        addOverlay();
+        addSideMenu();
 
         // Activate the side menu with a smooth transition
         setTimeout(() => {
@@ -34,23 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
         openMenu.style.display = 'none';
         closedMenu.style.display = 'inline-block';
 
+        removeOverlay();
+
         let sideMenu = document.querySelector('.sideMenu');
         if (sideMenu) {
-            // Remove the active class for the smooth closing transition
-            sideMenu.classList.remove('active');
-
-            //return the navLinks to the origin navLink container (navOptions)
-            setTimeout(() => {
-                let navOptions = document.querySelector('.navOptions');
-                navLinks.forEach(link => {
-                    link.classList.remove('navLinkForSmallerScreens');
-
-                    //reapply the margin to the right !
-                    link.style.marginRight = '40px';
-                    navOptions.appendChild(link);
-                });
-            }, 300);
-
+            removeSideMenu();
+    
             //remove the sideMenu
             setTimeout(() => {
                 sideMenu.remove();
@@ -58,18 +74,68 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    //this function removes the sideBar when navigated to a section
+    function moveToSectionAndRemove(){
+        if(isSideMenuOpen){
+            removeSideMenu(); 
+            removeOverlay(); 
+            openMenu.style.display = 'none'; 
+            closedMenu.style.display = 'inline-block';
+        }
+    }
+    navLinks.forEach(link =>{
+        link.addEventListener('click', () =>{
+            moveToSectionAndRemove();
+        })
+    })
+
+    //overlay functions
+    let overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+
+    function addOverlay(){    
+        document.body.appendChild(overlay);
+    }
+
+    function removeOverlay(){
+        let overlay = document.querySelector('.overlay');
+        overlay.remove();
+    }
+
+    overlay.addEventListener('click', () => {
+        openMenu.style.display = 'none';
+        closedMenu.style.display = 'inline-block';
+        removeSideMenu();
+        removeOverlay();
+    })
+
+    function checkScreenSize(){
+        if (window.innerWidth >= 768 && isSideMenuOpen){ 
+            openMenu.style.display = 'none'; 
+            closedMenu.style.display = 'inline-block'; 
+            removeSideMenu(); 
+            removeOverlay(); 
+        }
+    }
+
+    window.addEventListener('resize', checkScreenSize);
 
     //darkmode code
-    let darkModeButton = document.querySelector('.profilePicture');
+    let darkModeButton = document.querySelector('.modeButton');
     let currentMode = 'light';
+
+    let onLightBulb = document.querySelector('.on-lightbulb');
+    let offLightBulb = document.querySelector('.off-lightbulb');
 
     darkModeButton.addEventListener('click', () =>{
         if(currentMode === 'light'){
-            darkModeButton.src = './gokuDark.jpg';
+            onLightBulb.style.display = 'inline-block';
+            offLightBulb.style.display = 'none';
             currentMode = 'dark';
         }
         else{
-            darkModeButton.src = './gokuLight.jpg';
+            onLightBulb.style.display = 'none';
+            offLightBulb.style.display = 'inline-block';
             currentMode = 'light';
         }
 

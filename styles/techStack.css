@@ -36,7 +36,7 @@
     margin: 20px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: var(--tech-tiles-background);
+    background-color: var(--tiles-background);
     cursor: pointer;
     transition: all 0.3s ease;
 }
