@@ -104,9 +104,13 @@ header {
     position: relative;
 }
 
-.navOptions, .profilePicture, .switchButton{ border: 2px solid var(--header-component-border); }
+.navOptions,
+.profilePicture,
+.switchButton {
+    border: 2px solid var(--header-component-border);
+}
 
-.navOptions{
+.navOptions {
     height: 60px;
     background-color: var(--tiles-background);
     display: flex;
@@ -125,7 +129,7 @@ header {
     transition: all 0.3s ease;
 }
 
-.profilePicture:hover{
+.profilePicture:hover {
     scale: 1.15;
 }
 
@@ -143,12 +147,12 @@ header {
     background-color: var(--content-hover-background-color);
 }
 
-.RightSideElements{ 
-    display: flex; 
+.RightSideElements {
+    display: flex;
     align-items: center;
 }
 
-.switchButton{
+.switchButton {
     height: 60px;
     width: 60px;
     background-color: var(--tiles-background);
@@ -160,18 +164,20 @@ header {
     cursor: pointer;
 }
 
-.fa-lightbulb{ 
+.fa-lightbulb {
     font-size: 24px;
     background-color: transparent;
 }
 
-.on-lightbulb{ display: none; }
+.on-lightbulb {
+    display: none;
+}
 
-.modeButton > *{
+.modeButton>* {
     transition: all 0.2s ease;
 }
 
-.modeButton > *:hover{
+.modeButton>*:hover {
     background-color: var(--content-hover-background-color);
 }
 
@@ -190,9 +196,75 @@ section {
 }
 
 footer {
-    margin-bottom: 25px;
+    width: 100%;
+    height: auto;
+    padding: 35px;
+    text-align: center;
     font-size: 12px;
     font-weight: 700;
+}
+
+.socialHeading {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.socials {
+    height: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.link {
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--header-component-border);
+    outline: none;
+    border-radius: 50%;
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.link:last-child {
+    margin-right: 0;
+}
+
+.github, .linkedin, .discord {
+    font-size: 24px;
+    color: var(--primary-accent-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-github, .fa-linkedin, .fa-discord {
+    color: var(--primary-accent-color);
+    display: inline-block;
+}
+
+.link:hover, .github:hover, .linkedin:hover, .discord:hover {
+    background-color: var(--content-hover-background-color);
+}
+
+.fa-discord {
+    margin-right: 0;
+}
+
+.contact-dark-mode {
+    background-color: '#141414';
+    color: '#f7f7f7';
+}
+
+.socialHeading {
+    display: block;
+    font-weight: 700;
+    font-size: 22px;
 }
 
 a {
@@ -200,16 +272,24 @@ a {
     color: var(--primary-font-color);
 }
 
-.fa-brands,
-.fa-solid, .fa-regular {
+.fa-brands, .fa-solid, .fa-regular {
     cursor: pointer;
 }
 
-.overlay{
+.createdBy {
+    width: 80%; /*80% of the actual footer*/
+    margin: 0 auto;
+}
+
+.createdByText {
+    margin-top: 25px;
+}
+
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width:100vw;
+    width: 100vw;
     height: 100dvh;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.5);
@@ -260,12 +340,12 @@ a {
         display: none;
     }
 
-    .switchButton{
+    .switchButton {
         height: 45px;
         width: 45px;
     }
-    
-    .fa-lightbulb{ 
+
+    .fa-lightbulb {
         font-size: 18px;
     }
 
@@ -302,7 +382,7 @@ a {
         transition: all 0.2s ease;
     }
 
-    .navEl:hover{
+    .navEl:hover {
         background-color: var(--primary-background-color);
     }
 
@@ -328,5 +408,24 @@ a {
     .profilePicture {
         width: 35px;
         height: 35px;
+    }
+
+
+    .socialHeading {
+        font-size: 22px;
+    }
+
+    .link {
+        width: 50px;
+        height: 50px;
+        margin-right: 30px;
+    }
+
+    .link:last-child {
+        margin-right: 0;
+    }
+
+    .github, .linkedin, .discord {
+        font-size: 20px;
     }
 }
